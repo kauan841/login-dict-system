@@ -1,17 +1,18 @@
 # 🔐 Sistema de Login com Python
 
 Um sistema simples de autenticação desenvolvido em Python, utilizando dicionários (`dict`).
-O projeto simula um sistema de cadastro e login de usuários no terminal.
+O projeto simula um fluxo real de **cadastro e login de usuários no terminal**, com validações e controle de acesso.
 
 ---
 
 ## 🚀 Funcionalidades
 
 * ➕ Cadastro de usuário
-* 🔐 Login com validação
+* 🔑 Login com validação de credenciais
 * ❌ Bloqueio de usuários duplicados
-* ⚠️ Mensagens de erro
-* 🔄 Menu interativo
+* 🔒 Limite de 3 tentativas de login
+* ⚠️ Validação de campos (nome e senha não podem ser vazios)
+* 🔄 Menu interativo no terminal
 
 ---
 
@@ -20,9 +21,7 @@ O projeto simula um sistema de cadastro e login de usuários no terminal.
 * Python 3
 * Estrutura de dados: `dict`
 * Estruturas de controle (`if`, `while`)
-* Tratamento de erros (`try/except`)
-
----
+* Manipulação de strings (`strip`)
 
 ---
 
@@ -30,10 +29,19 @@ O projeto simula um sistema de cadastro e login de usuários no terminal.
 
 ```text
 Menu:
-1 - Cadastrar
+1 - Cadastrar-se
 2 - Login
 3 - Sair
 ```
+
+---
+
+## ⚙️ Regras do sistema
+
+* O nome de usuário deve ser único
+* Nome e senha não podem ser vazios
+* O usuário tem no máximo 3 tentativas de login
+* Após exceder o limite, o acesso é bloqueado
 
 ---
 
@@ -42,21 +50,22 @@ Menu:
 Este projeto foi desenvolvido para praticar:
 
 * Lógica de autenticação
-* Manipulação de dicionários
 * Validação de dados
-* Criação de sistemas interativos
+* Organização de código
+* Estruturas de dados em Python
+* Simulação de sistemas reais
 
 ---
 
 ## 📈 Possíveis melhorias
 
-* 🔐 Ocultar senha (getpass)
-* ⛔ Limitar tentativas de login
-* 💾 Salvar usuários em arquivo (JSON)
-* 🌐 Criar API com Flask
+* 🔐 Ocultar senha (uso de `getpass`)
+* 💾 Persistência de dados (arquivo JSON ou banco de dados)
+* 🌐 Transformar em API com Flask
+* 🧪 Implementar testes automatizados
 
 ---
 
 ## 👨‍💻 Autor
 
-Desenvolvido por Kauan Moraes 🚀
+Desenvolvido por **Kauan Moraes** 🚀
