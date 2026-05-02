@@ -1,33 +1,43 @@
-usuarios = []
+usuarios = {}
 
 
 def cadastro_usuario():
-    nome = input("Digite o nome de usuário: ").strip()
-    senha = input("Digite a senha: ").strip()
-
-    if not nome or not senha:
-        print("Preencha todos os campos.")
-        return
-
+    
+    nome = input("Digite um nome de usuário: ").strip()
     if nome in usuarios:
-        print("Usuário já existe.")
-    else:
-        usuarios[nome] = senha
-        print("Usuário registrado com sucesso!")
+        print("Nome de usuário já existe. Tente outro.")
+        return
+    if not nome:
+        print("Nome de usuário não pode ser vazio.")
+        return
+    
+    senha = input("Digite uma senha: ").strip()
+    usuarios[nome] = senha
+    print("Usuário cadastrado com sucesso!")
+    
+    if not senha:
+        print("Senha não pode ser vazia.")
+        return
+  
 
 
 def login_usuario():
-    nome = input("Digite o nome de usuário: ").strip()
-    senha = input("Digite a senha: ").strip()
 
-    if not nome or not senha:
-        print("Preencha todos os campos.")
-        return
+    tentativas = 3
+    while tentativas > 0:
+        nome = input("Digite o nome de usuário: ").strip()
+        senha = input("Digite a senha: ").strip()
 
-    if nome in usuarios and usuarios[nome] == senha:
-        print("Login realizado com sucesso!")
-    else:
-        print("Nome de usuário ou senha incorretos.")
+        if nome in usuarios and usuarios[nome] == senha:
+            print(f"Login bem-sucedido! Bem-vindo, {nome}.")
+            return
+        else:
+            tentativas -= 1
+            print("Nome de usuário ou senha incorretos.")
+            if tentativas > 0:
+                print(f"Você tem {tentativas} tentativas restantes.")
+
+    print("Acesso bloqueado após várias tentativas.")
 
 
 def main():
