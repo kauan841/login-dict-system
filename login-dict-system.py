@@ -1,4 +1,4 @@
-usuarios = {}
+usuarios = []
 
 
 def cadastro_usuario():
