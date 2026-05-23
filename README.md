@@ -16,22 +16,51 @@ O projeto simula um fluxo real de **cadastro e login de usuários no terminal**,
 
 ---
 
+## 📁 Estrutura do Projeto
+
+O projeto foi reorganizado para uma estrutura mais profissional e modular, separando as funções em diferentes arquivos e pastas.
+
+```text
+sistema_login/
+│
+├── main/
+│   └── main.py
+│
+├── funcoes_system/
+│   ├── cadastro.py
+│   └── login.py
+│
+└── dados/
+```
+
+### 📌 Organização
+
+* `main.py` → responsável pelo menu principal e execução do sistema
+* `cadastro.py` → funções relacionadas ao cadastro de usuários
+* `login.py` → funções relacionadas ao login e autenticação
+* `dados/` → futura pasta para armazenamento de dados
+
+---
+
 ## 🧠 Tecnologias utilizadas
 
 * Python 3
 * Estrutura de dados: `dict`
 * Estruturas de controle (`if`, `while`)
 * Manipulação de strings (`strip`)
+* Modularização de código
 
 ---
 
-## 💻 Exemplo de uso
+
+### 📌 Menu exibido no terminal
 
 ```text
-Menu:
-1 - Cadastrar-se
-2 - Login
-3 - Sair
+=== Sistema de Login ===
+
+1. Cadastrar-se
+2. Login
+3. Sair
 ```
 
 ---
@@ -52,6 +81,7 @@ Este projeto foi desenvolvido para praticar:
 * Lógica de autenticação
 * Validação de dados
 * Organização de código
+* Modularização em Python
 * Estruturas de dados em Python
 * Simulação de sistemas reais
 
