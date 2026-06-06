@@ -1,13 +1,24 @@
 
 import os
 import sys
+import json
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-if ROOT_DIR not in sys.path:
-    sys.path.insert(0, ROOT_DIR)
 
-from funcoes_system.cadastro import cadastro_usuario
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from funcoes_system.cadastro import cadastro_usuario ,usuarios
 from funcoes_system.login import login_usuario
+
+
+caminho_arquivo = r"C:\\Users\\kaike\\Desktop\\login_system\\dados\\login.json"
+   
+try:
+    with open(caminho_arquivo, "r", encoding="utf-8") as arquivo:
+        usuarios.update(json.load(arquivo))
+except (FileNotFoundError, json.JSONDecodeError):
+    pass
+        
 
 
 while True:
@@ -22,8 +33,13 @@ while True:
 
         if escolha == '1':
             cadastro_usuario()
+            caminho_arquivo = r"C:\\Users\\kaike\\Desktop\\login_system\\dados\\login.json"
+            with open(caminho_arquivo, 'w', encoding='utf-8') as arquivo:
+                json.dump(usuarios, arquivo, ensure_ascii=False, indent=4)
+
         elif escolha == '2':
             login_usuario()
+
         elif escolha == '3':
             print("Saindo do sistema. Até mais!")
             break
