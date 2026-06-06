@@ -1,59 +1,64 @@
-# 🔐 Sistema de Login com Python
+# 🔐 LoginCore
 
-Um sistema simples de autenticação desenvolvido em Python, utilizando dicionários (`dict`).
-O projeto simula um fluxo real de **cadastro e login de usuários no terminal**, com validações e controle de acesso.
+Sistema de autenticação de usuários desenvolvido em Python com cadastro, login, persistência de dados em JSON e estrutura modular.
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Sobre o Projeto
 
-* ➕ Cadastro de usuário
+O LoginCore é um projeto criado para praticar conceitos fundamentais de desenvolvimento em Python, simulando um sistema real de autenticação de usuários através do terminal.
+
+O sistema permite cadastrar usuários, realizar login, validar credenciais e armazenar dados de forma persistente utilizando arquivos JSON.
+
+---
+
+## ✨ Funcionalidades
+
+* ➕ Cadastro de usuários
 * 🔑 Login com validação de credenciais
-* ❌ Bloqueio de usuários duplicados
+* 💾 Armazenamento de dados em JSON
+* ❌ Impede usuários duplicados
 * 🔒 Limite de 3 tentativas de login
-* ⚠️ Validação de campos (nome e senha não podem ser vazios)
-* 🔄 Menu interativo no terminal
+* ⚠️ Validação de campos obrigatórios
+* 📂 Organização modular do código
+* 🖥️ Interface via terminal
 
 ---
 
 ## 📁 Estrutura do Projeto
 
-O projeto foi reorganizado para uma estrutura mais profissional e modular, separando as funções em diferentes arquivos e pastas.
-
 ```text
-sistema_login/
+login_system/
 │
 ├── main/
-│   └── main.py
+│   └── sistema_login.py
 │
 ├── funcoes_system/
+│   ├── __init__.py
 │   ├── cadastro.py
-│   └── login.py
+│   ├── login.py
+│   └── arquivo.py
 │
-└── dados/
+├── dados/
+│   └── login.json
+│
+└── README.md
 ```
 
-### 📌 Organização
-
-* `main.py` → responsável pelo menu principal e execução do sistema
-* `cadastro.py` → funções relacionadas ao cadastro de usuários
-* `login.py` → funções relacionadas ao login e autenticação
-* `dados/` → futura pasta para armazenamento de dados
-
 ---
 
-## 🧠 Tecnologias utilizadas
+## 🧠 Tecnologias Utilizadas
 
 * Python 3
-* Estrutura de dados: `dict`
-* Estruturas de controle (`if`, `while`)
-* Manipulação de strings (`strip`)
-* Modularização de código
+* JSON
+* Dicionários (`dict`)
+* Modularização
+* Manipulação de arquivos
+* Tratamento de exceções
 
 ---
 
-
-### 📌 Menu exibido no terminal
+## 📌 Fluxo do Sistema
 
 ```text
 === Sistema de Login ===
@@ -63,39 +68,56 @@ sistema_login/
 3. Sair
 ```
 
+### Cadastro
+
+* O usuário informa nome e senha.
+* O sistema verifica se o nome já existe.
+* Os dados são armazenados em arquivo JSON.
+
+### Login
+
+* O usuário informa nome e senha.
+* O sistema valida as credenciais.
+* São permitidas até 3 tentativas.
+
 ---
 
-## ⚙️ Regras do sistema
+## ⚙️ Regras de Negócio
 
-* O nome de usuário deve ser único
-* Nome e senha não podem ser vazios
-* O usuário tem no máximo 3 tentativas de login
-* Após exceder o limite, o acesso é bloqueado
+* O nome de usuário deve ser único.
+* Nome e senha não podem ser vazios.
+* O login possui limite de 3 tentativas.
+* Os dados são persistidos em arquivo JSON.
 
 ---
 
-## 🎯 Objetivo do projeto
+## 🎯 Objetivos de Aprendizagem
 
 Este projeto foi desenvolvido para praticar:
 
+* Organização de projetos Python
+* Estruturas de dados
+* Modularização
+* Manipulação de arquivos JSON
+* Tratamento de exceções
 * Lógica de autenticação
-* Validação de dados
-* Organização de código
-* Modularização em Python
-* Estruturas de dados em Python
-* Simulação de sistemas reais
+* Boas práticas de programação
 
 ---
 
-## 📈 Possíveis melhorias
+## 📈 Próximas Melhorias
 
-* 🔐 Ocultar senha (uso de `getpass`)
-* 💾 Persistência de dados (arquivo JSON ou banco de dados)
-* 🌐 Transformar em API com Flask
-* 🧪 Implementar testes automatizados
+* 🔐 Criptografia de senhas com hashlib
+* 🔄 Alteração de senha
+* 🗑️ Exclusão de usuários
+* 📊 Registro de tentativas de login
+* 🌐 API com Flask
+* 🗄️ Integração com banco de dados SQLite
 
 ---
 
 ## 👨‍💻 Autor
 
 Desenvolvido por **Kauan Moraes** 🚀
+
+Projeto criado com fins educacionais e para evolução das habilidades em Python.
